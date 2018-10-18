@@ -1,0 +1,26 @@
+### Java template
+# Compiled class file
+*.class
+target
+build
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IntelliJ project files
+.idea
+.gradle
+*.iml
+out
+gen
+
+*.dat
+

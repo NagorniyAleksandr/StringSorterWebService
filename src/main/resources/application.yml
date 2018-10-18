@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.web : INFO
+    com.nagorniy.webservice: INFO
+  # use logging file to be able read logs after the service down or crashed
+  # is useful if we don't have any logs aggregator
+  file:
+    max-history: 10
+    max-size: 10MB
+  path: ./../logs/strings-sorter-service/
+
+application:
+  processing:
+    max-results-amount: 5 # amount of max amount of sorted results in response
+  swagger:
+    enabled: true # use true to enable swagger UI and docs api
+
+# spring actuator to be able make health check
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, logfile, loggers
+  endpoint:
+    # 'logfile' endpoint is useful if we don't have any logs aggregator. disable if you don't need such an access
+    logfile:
+      enabled: true
+    loggers:
+      enabled: true
